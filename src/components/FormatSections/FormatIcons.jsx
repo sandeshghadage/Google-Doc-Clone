@@ -11,6 +11,7 @@ import FormatBoldOutlinedIcon from "@mui/icons-material/FormatBoldOutlined";
 import FormatItalicOutlinedIcon from "@mui/icons-material/FormatItalicOutlined";
 import FormatUnderlinedOutlinedIcon from "@mui/icons-material/FormatUnderlinedOutlined";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
+import StrikethroughSOutlinedIcon from '@mui/icons-material/StrikethroughSOutlined';
 import AddCommentOutlinedIcon from "@mui/icons-material/AddCommentOutlined";
 import { RxDividerVertical } from "react-icons/rx";
 import styles from "./FormatIcons.module.css";
@@ -67,6 +68,11 @@ export function FormatIcons(props) {
       icon: <FormatUnderlinedOutlinedIcon sx={{ width: "1.4vw" }} />,
       tag: "underline",
       tooltip: "Underline"
+    },
+    {
+      icon: <StrikethroughSOutlinedIcon sx={{ width: "1.4vw" }} />,
+      tag: "strikeThrough",
+      tooltip: "strikeThrough"
     },
     {
       icon: <RxDividerVertical />,
