@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./ColorPicker.module.css";
 import FormatColorTextIcon from "@mui/icons-material/FormatColorText";
+import Tooltip from "@mui/material/Tooltip";
 
 export default function FontColorPicker() {
   const [show, setShow] = useState(false);
@@ -11,10 +12,12 @@ export default function FontColorPicker() {
 
   return (
     <span className={styles.colorbox}>
-      <FormatColorTextIcon
+      <Tooltip title="Font color">
+      <FormatColorTextIcon sx={{width:"1.2vw"}}
         className={styles.formatIcons}
         onClick={() => setShow(!show)}
       />
+      </Tooltip>
       {show ? (
         <>
           <input

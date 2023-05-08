@@ -19,6 +19,10 @@ import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRen
 import DriveFileMoveOutlinedIcon from "@mui/icons-material/DriveFileMoveOutlined";
 import AddToDriveOutlinedIcon from "@mui/icons-material/AddToDriveOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+import { useRecoilValue } from "recoil";
+import { docNameAtom } from "../../atom/atom";
 
 const menuCompStyle = {
   marginBottom: "-4px",
@@ -33,6 +37,8 @@ const menuCompStyle = {
 export default function MenuListComposition() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
+
+  const title = useRecoilValue(docNameAtom);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -64,6 +70,21 @@ export default function MenuListComposition() {
 
     prevOpen.current = open;
   }, [open]);
+
+
+  async function handleDownload() {
+    const sheetContent = document.getElementById(`editor`);
+    const canvas = await html2canvas(sheetContent, { dpi: 300 });
+    const imageData = canvas.toDataURL("image/png", 1.0);
+    const pdfDoc = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
+      compress: false,
+    });
+    pdfDoc.addImage(imageData, "PNG", 0, 0, 210, 297, "", "FAST");
+    pdfDoc.save(`${title}.pdf`);
+  }
 
   return (
     <Stack direction="row" spacing={2}>
@@ -141,7 +162,7 @@ export default function MenuListComposition() {
                       Email
                     </MenuItem>
 
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem onClick={handleDownload}>
                       <FileDownloadOutlinedIcon
                         sx={{ marginRight: "10px" }}
                         style={iconStyle}

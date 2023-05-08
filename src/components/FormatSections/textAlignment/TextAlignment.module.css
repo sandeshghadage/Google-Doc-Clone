@@ -5,5 +5,17 @@
   background-color: rgb(220, 231, 241);
   border-radius: 15px;
   padding: 0.2rem;
-  width: 300px;
+  /* width: 300px; */
+}
+
+.formatIcons  {
+  color: rgb(15, 15, 15, .6 );
+  width: 1vw;
+  height: 3vh;
+  margin: .3rem;
+  /* padding: .1rem; */
+}
+
+.formatIcons:hover {
+  background-color: rgb(94, 92, 92, .2);
 }

@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { textEditorRefAtom } from "../../atom/atom";
+import { useRef } from "react";
+import { textEditorRefAtom } from "../../../atom/atom";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 
 export default function ImagePicker() {
@@ -30,7 +30,7 @@ export default function ImagePicker() {
 
   return (
     <div>
-      <InsertPhotoIcon
+      <InsertPhotoIcon sx={{width:"1.2vw"}}
         // className={styles.formatIcons}
         onClick={handleImageOpen}
       />
