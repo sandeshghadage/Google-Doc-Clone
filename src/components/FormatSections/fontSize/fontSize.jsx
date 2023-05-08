@@ -9,47 +9,47 @@ export function FontSize() {
 
   const fontSize = [
     {
-      fontSize: 1,
+      fontSize: 8,
       action: "1",
     },
     {
-      fontSize: 2,
+      fontSize: 9,
       action: "2",
     },
     {
-      fontSize: 3,
+      fontSize: 10,
       action: "3",
     },
     {
-      fontSize: 4,
+      fontSize: 11,
       action: "4",
     },
     {
-      fontSize:5,
+      fontSize:12,
       action: "5",
     },
     {
-      fontSize: 6,
+      fontSize: 14,
       action: "6",
     },
     {
-      fontSize: 7,
+      fontSize: 18,
       action: "7",
     },
     {
-      fontSize: 8,
+      fontSize: 24,
       action: "8",
     },
     {
-      fontSize: 9,
+      fontSize: 26,
       action: "9",
     },
     {
-      fontSize: 10,
+      fontSize: 30,
       action: "10",
     },
     {
-      fontSize: 11,
+      fontSize: 36,
       action: "11",
     },
   ];
@@ -57,7 +57,7 @@ export function FontSize() {
   return (
     <>
       <select style={{width:"3vw"}} value={selectedOption} onChange={(e) => handleSize(e)}>
-        <option>1</option>
+        {/* <option>8</option> */}
         {
           fontSize.map( (element, index)=> (
             <option key={index}>{element.fontSize}</option>
