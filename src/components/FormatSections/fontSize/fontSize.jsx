@@ -57,10 +57,10 @@ export function FontSize() {
   return (
     <>
       <select style={{width:"3vw"}} value={selectedOption} onChange={(e) => handleSize(e)}>
-        {/* <option>8</option> */}
+        <option>8</option>
         {
           fontSize.map( (element, index)=> (
-            <option key={index}>{element.fontSize}</option>
+            <option key={index}>{element.action}</option>
           ))
         }
       </select>
